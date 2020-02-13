@@ -50,6 +50,11 @@
     [self setProgressRotationAngle:0.f];
     [self setProgressStrokeColor:[UIColor orangeColor]];
     [self setProgressColor:[UIColor orangeColor]];
+    CGFloat colors [] = {
+        0.0, 0, 1.0, 1.0,
+        1.0, 0.0, 1.0, 1.0
+    };
+    [self setProgressGradientColors:colors];
     [self setProgressCapType:kCGLineCapRound];
     [self setEmptyLineColor:[UIColor lightGrayColor]];
     [self setEmptyLineStrokeColor:[UIColor lightGrayColor]];
@@ -176,6 +181,14 @@
 
 -(UIColor*)progressStrokeColor{
     return self.progressLayer.progressStrokeColor;
+}
+
+-(void)setProgressGradientColors:(CGFloat *)progressGradientColors{
+    self.progressLayer.progressGradientColors = progressGradientColors;
+}
+
+-(CGFloat *)progressGradientColors{
+    return self.progressLayer.progressGradientColors;
 }
 
 -(void)setEmptyLineColor:(UIColor *)emptyLineColor{

@@ -21,6 +21,7 @@
 @dynamic progressLineWidth;
 @dynamic progressColor;
 @dynamic progressStrokeColor;
+@dynamic progressGradientColors;
 @dynamic emptyLineWidth;
 @dynamic progressAngle;
 @dynamic emptyLineColor;
@@ -138,6 +139,15 @@
     CGContextSetFillColorWithColor(c, self.progressColor.CGColor);
     CGContextSetStrokeColorWithColor(c, self.progressStrokeColor.CGColor);
     CGContextDrawPath(c, kCGPathFillStroke);
+
+    if (self.progressGradientColors != nil) {
+        CGColorSpaceRef baseSpace = CGColorSpaceCreateDeviceRGB();
+        CGGradientRef gradient = CGGradientCreateWithColorComponents(baseSpace, self.progressGradientColors, NULL, 2);
+        CGColorSpaceRelease(baseSpace);
+        CGPoint startPoint = CGPointMake(CGRectGetMinX(rect), CGRectGetMidY(rect));
+        CGPoint endPoint = CGPointMake(CGRectGetMaxX(rect), CGRectGetMidY(rect));
+        CGContextDrawLinearGradient(c, gradient, startPoint, endPoint, 0);
+    }
     
     CGPathRelease(arc);
     CGPathRelease(strokedArc);

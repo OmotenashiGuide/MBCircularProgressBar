@@ -91,6 +91,11 @@ typedef NS_ENUM(NSInteger, MBCircularProgressBarAppearanceType) {
 @property (nonatomic,strong) UIColor    *progressStrokeColor;
 
 /**
+* The gradient color of the progress bar frame
+*/
+@property (nonatomic,assign) CGFloat *progressGradientColors;
+
+/**
  * The shape of the progress bar cap	{kCGLineCapButt=0, kCGLineCapRound=1, kCGLineCapSquare=2}
  */
 @property (nonatomic,assign) CGLineCap  progressCapType;

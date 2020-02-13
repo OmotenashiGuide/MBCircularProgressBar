@@ -111,6 +111,11 @@ IB_DESIGNABLE
 @property (nonatomic,strong) IBInspectable UIColor   *progressStrokeColor;
 
 /**
+ * The gradient color of the progress bar frame
+ */
+@property (nonatomic,assign) IBInspectable CGFloat   *progressGradientColors;
+
+/**
  * The shape of the progress bar cap	{kCGLineCapButt=0, kCGLineCapRound=1, kCGLineCapSquare=2} 
  */
 @property (nonatomic,assign) IBInspectable NSInteger progressCapType;

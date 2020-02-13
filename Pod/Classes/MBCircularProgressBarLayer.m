@@ -141,8 +141,6 @@
     CGContextSetStrokeColorWithColor(c, self.progressStrokeColor.CGColor);
     CGContextDrawPath(c, kCGPathFillStroke);
 
-
-    NSLog(@"グラデーション処理");
     if (self.progressGradientStartColor != nil && self.progressGradientEndColor != nil) {
         CGFloat startRed = 0.0f; CGFloat startGreen = 0.0f; CGFloat startBlue = 0.0f; CGFloat startAlpha = 0.0f;
         [self.progressGradientStartColor getRed:&startRed green:&startGreen blue:&startBlue alpha:&startAlpha];
@@ -150,7 +148,6 @@
         [self.progressGradientEndColor getRed:&startRed green:&startGreen blue:&startBlue alpha:&startAlpha];
 
         CGFloat colors [] = {startRed, startGreen, startBlue, startAlpha, endRed, endGreen, endBlue, endAlpha};
-        NSLog(@"設定色：%@", colors);
         CGColorSpaceRef baseSpace = CGColorSpaceCreateDeviceRGB();
         CGGradientRef gradient = CGGradientCreateWithColorComponents(baseSpace, colors, NULL, 2);
         CGColorSpaceRelease(baseSpace);

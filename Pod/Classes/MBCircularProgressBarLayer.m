@@ -149,6 +149,7 @@
         [self.progressGradientEndColor getRed:&startRed green:&startGreen blue:&startBlue alpha:&startAlpha];
 
         CGFloat colors [] = {startRed, startGreen, startBlue, startAlpha, endRed, endGreen, endBlue, endAlpha};
+        NSLog(@"設定色：%@", colors);
         CGColorSpaceRef baseSpace = CGColorSpaceCreateDeviceRGB();
         CGGradientRef gradient = CGGradientCreateWithColorComponents(baseSpace, colors, NULL, 2);
         CGColorSpaceRelease(baseSpace);

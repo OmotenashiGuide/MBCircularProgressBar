@@ -142,6 +142,7 @@
     CGContextDrawPath(c, kCGPathFillStroke);
 
 
+    NSLog(@"グラデーション処理");
     if (self.progressGradientStartColor != nil && self.progressGradientEndColor != nil) {
         CGFloat startRed = 0.0f; CGFloat startGreen = 0.0f; CGFloat startBlue = 0.0f; CGFloat startAlpha = 0.0f;
         [self.progressGradientStartColor getRed:&startRed green:&startGreen blue:&startBlue alpha:&startAlpha];

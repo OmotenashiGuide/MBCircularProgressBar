@@ -143,7 +143,7 @@
         CGFloat startRed = 0.0f; CGFloat startGreen = 0.0f; CGFloat startBlue = 0.0f; CGFloat startAlpha = 0.0f;
         [self.progressGradientStartColor getRed:&startRed green:&startGreen blue:&startBlue alpha:&startAlpha];
         CGFloat endRed = 0.0f; CGFloat endGreen = 0.0f; CGFloat endBlue = 0.0f; CGFloat endAlpha = 0.0f;
-        [self.progressGradientEndColor getRed:&startRed green:&startGreen blue:&startBlue alpha:&startAlpha];
+        [self.progressGradientEndColor getRed:&endRed green:&endGreen blue:&endBlue alpha:&endAlpha];
 
         CGFloat colors [] = {startRed, startGreen, startBlue, startAlpha, endRed, endGreen, endBlue, endAlpha};
         CGColorSpaceRef baseSpace = CGColorSpaceCreateDeviceRGB();

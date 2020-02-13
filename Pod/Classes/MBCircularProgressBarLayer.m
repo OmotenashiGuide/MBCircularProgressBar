@@ -135,11 +135,8 @@
                                    kCGLineJoinMiter,
                                    10);
 
-    
+    CGContextSaveGState(c);
     CGContextAddPath(c, strokedArc);
-    CGContextSetFillColorWithColor(c, self.progressColor.CGColor);
-    CGContextSetStrokeColorWithColor(c, self.progressStrokeColor.CGColor);
-    CGContextDrawPath(c, kCGPathFillStroke);
     CGContextClip(c);
 
     if (self.progressGradientStartColor != nil && self.progressGradientEndColor != nil) {
@@ -155,6 +152,10 @@
         CGPoint startPoint = CGPointMake(CGRectGetMinX(rect), CGRectGetMidY(rect));
         CGPoint endPoint = CGPointMake(CGRectGetMaxX(rect), CGRectGetMidY(rect));
         CGContextDrawLinearGradient(c, gradient, startPoint, endPoint, 0);
+    } else {
+        CGContextSetFillColorWithColor(c, self.progressColor.CGColor);
+        CGContextSetStrokeColorWithColor(c, self.progressStrokeColor.CGColor);
+        CGContextDrawPath(c, kCGPathFillStroke);
     }
     
     CGPathRelease(arc);

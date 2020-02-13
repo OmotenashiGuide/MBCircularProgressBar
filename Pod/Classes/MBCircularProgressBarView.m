@@ -182,7 +182,7 @@
     return self.progressLayer.progressStrokeColor;
 }
 
--(void)setprogressGradientStartColor:(UIColor *)progressGradientStartColor{
+-(void)setProgressGradientStartColor:(UIColor *)progressGradientStartColor{
     self.progressLayer.progressGradientStartColor = progressGradientStartColor;
 }
 
@@ -190,7 +190,7 @@
     return self.progressLayer.progressGradientStartColor;
 }
 
--(void)setprogressGradientEndColor:(UIColor *)progressGradientEndColor{
+-(void)setProgressGradientEndColor:(UIColor *)progressGradientEndColor{
     self.progressLayer.progressGradientEndColor = progressGradientEndColor;
 }
 
